@@ -1,0 +1,40 @@
+.price {
+	white-space: nowrap; font-size: 1.1428em; 
+	.amount{
+		color: $link-color; font-weight: bold;
+	}
+	del {
+		text-decoration: none; position: relative; padding: 0 3px;
+		.amount{
+			color: $color; font-weight: normal;
+		}
+		&:before {
+			content: '';display: block;width: 100%;height: 1px; background: $color;
+			position: absolute; top: 50%; left: 0; @include rotate(0deg);
+		}
+	}
+	ins {
+		margin: 0 0 0 5px; text-decoration: none;
+		.amount{
+			color: $color1;
+		}
+	}
+	.from {
+		font-size: 1em; margin: -2px 0 0 0;text-transform: uppercase;
+	}
+	@media(min-width: $screen-md-max){
+		.woocommerce-Price-amount{
+			margin: 0 0 0 3px;
+			&:first-child{
+				margin: 0 3px 0 0;
+			}
+		}
+	}
+}
+.product-type-variable{
+	.price {
+		.amount{
+			@media(max-width: $screen-md-max){ font-size: 1em;}
+		}
+	}
+}

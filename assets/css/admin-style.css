@@ -1,0 +1,13 @@
+.redux-notice,
+#redux-header .redux-dev-mode-notice-container,
+#redux-header .rAds{ display: none !important; }
+
+#menu-management .field-megamenu-background .bg-preview{
+	max-width: 100%;
+}
+.redux-main table.form-table .select_wrapper .select2-container{
+	min-width: 0px !important;
+}
+.vc_checkbox-label {
+    display: block;
+}

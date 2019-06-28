@@ -1,0 +1,214 @@
+@mixin button() {
+	border-radius: 100%;height: 1em;width: 1em;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	background-color: #444;
+	color: #fff !important;
+	font-size: 16px !important;
+	line-height: 1em;
+	@include transition();
+
+	&:hover {
+		background-color: #000;
+	}
+}
+
+body.single.single-product{
+	div.pp_default,
+	div.pp_woocommerce {
+		.pp_content_container {
+			background: #fff;
+			border-radius: 3px;
+			box-shadow: 0 1px 30px rgba(0, 0, 0, 0.25);
+			padding: 20px 0;
+			@include clearfix();
+		}
+
+		.pp_loaderIcon {
+			@include loader();
+		}
+
+		div.ppt {
+			color: black; display: none !important;
+		}
+
+		.pp_gallery {
+			ul {
+				li {
+					a {
+						border: 1px solid rgba(0, 0, 0, 0.5);
+						background: #fff;
+						box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+						border-radius: 2px;
+						display: block;
+
+						&:hover {
+							border-color: #000;
+						}
+					}
+
+					&.selected {
+						a {
+							border-color: #000;
+						}
+					}
+				}
+			}
+		}
+
+		.pp_previous,
+		.pp_next {
+			&::before {
+				@include button();
+				font-family: 'WooCommerce';
+				content: '\e00b';
+				text-indent: 0;
+				display: none;
+				position: absolute;
+				top: 50%;
+				margin-top: -10px;
+				text-align: center;
+			}
+
+			&:hover {
+				&::before {
+					display: block;
+				}
+			}
+		}
+
+		.pp_previous {
+			&::before {
+				left: 1em;
+			}
+		}
+
+		.pp_next {
+			&::before {
+				right: 1em;
+				font-family: 'WooCommerce';
+				content: '\e008';
+			}
+		}
+
+		.pp_details {
+			margin: 0;
+			padding-top: 1em;
+		}
+
+		.pp_nav,
+		.pp_description {
+			font-size: 14px;
+		}
+
+		.pp_nav,
+		.pp_nav p,
+		.pp_play,
+		.pp_nav .pp_pause,
+		.pp_arrow_previous,
+		.pp_arrow_next {
+			margin: 0;
+		}
+
+		.pp_nav {
+			margin-right: 1em;
+			position: relative;
+		}
+
+		.pp_close {
+			@include button();
+			top: -0.5em;
+			right: -0.5em;
+			font-size: 1.618em !important;
+
+			&::before {
+				font-family: 'WooCommerce';
+				content: '\e013';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				text-align: center;
+				text-indent: 0;
+			}
+		}
+
+		.pp_arrow_previous,
+		.pp_arrow_next {
+			@include button();
+			position: relative;
+			margin-top: -1px;
+
+			&::before {
+				font-family: 'WooCommerce';
+				content: '\e00b';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				text-align: center;
+				text-indent: 0;
+			}
+		}
+
+		.pp_arrow_previous {
+			margin-right: 0.5em;
+		}
+
+		.pp_arrow_next {
+			margin-left: 0.5em;
+
+			&::before {
+				content: '\e008';
+			}
+		}
+
+		a.pp_expand,
+		a.pp_contract {
+			@include button();
+			right: auto;
+			left: -0.5em;
+			top: -0.5em;
+			font-size: 1.618em !important;
+
+			&::before {
+				font-family: 'WooCommerce';
+				content: '\e005';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				text-align: center;
+				text-indent: 0;
+			}
+		}
+
+		a.pp_contract {
+			&::before {
+				content: '\e004';
+			}
+		}
+
+		#respond {
+			margin: 0;
+			width: 100%;
+			background: none;
+			border: none;
+			padding: 0;
+
+			.form-submit {
+				margin-top: 0;
+				float: none;
+			}
+		}
+
+		.pp_inline {
+			padding: 0!important;
+		}
+	}
+}

@@ -1,0 +1,159 @@
+/***************************************************
+	scss file: assets/scss/theme/_toolbar_list.scss
+		+ Style for toolbar on listing page of WooCommerce
+****************************************************/
+.woocommerce-pagination {
+	margin: 0;
+	label{ display: inline-block; float: left; margin: 0 5px 0 0; display: none; }
+	.page-numbers {
+		margin: 0px; list-style:none; padding: 0; display:inline-block;
+		li { display: inline-block; float: left;
+			> span, > a {
+				text-align: center; margin: 0 5px; padding: 0 0; display: inline-block; font-size: 16px; border: 1px solid $base-border-color; //font-weight: bold;
+				height: 40px; width: 40px; line-height: 38px; @include border-radius(5px); color: $color;
+				&.next,
+				&.prev{
+					position: relative; overflow: hidden; font-size: 0px; text-align: center;
+					&:before{
+						font-size: 22px;
+					}
+				}
+				&.next{
+					&:before{ @include font-awesome('f105', 40px); }
+				}
+				&.prev{
+					&:before{ @include font-awesome('f104', 40px); }
+				}
+				&:hover,
+				&.current{
+					color: #fff; background: $color1; border-color: $color1;
+				}
+			}
+		}
+	}
+}
+
+.toolbar {
+	padding: 0; @include clearfix();
+	&.toolbar-top{
+		margin: 0 0;
+	}
+	& + .woocommerce-result-count{
+		@media(max-width: $screen-xs-max){
+			display: none;
+		}
+	}
+	&.toolbar-bottom{
+		margin: 0 0; padding: 30px 0 10px; @include clearfix(); text-align: center;
+		.woocommerce-result-count{
+			float: none; margin: 0 0;
+		}
+		.woocommerce-pagination{ float: none; margin: 0 auto;
+			@media(max-width: $screen-xs-max){ float: none; text-align: center; }
+		}
+	}
+	.sticky-filter-btn{
+		display: inline-block; float: left; padding: 0 20px; height: 40px; line-height: 40px; border: 1px solid $base-border-color; @include border-radius(5px); margin: 0 30px 0 0; 
+		cursor: pointer; position: relative; @include transition(all 0.25s ease-out);
+		span{ text-transform: uppercase; font-weight: bold; }
+		&:before{ 
+			@include font-awesome('f0b0', 22px); font-size: 18px; text-align: left;
+		}
+		&:hover,
+		&.active{
+			color: #fff; border-color: $color1; background-color: $color1;
+		}
+	}
+	.mode-view {
+		display: block;float: left; padding: 0 0;margin: 0 20px 0 0;
+		@media (max-width: $screen-xs-max) {
+			body.use-sticky-filter & {
+				float: right !important; margin: 0 0;
+				li a{ margin: 0 0 0 10px !important; }
+			}
+		}
+		li {
+			@include inline-block;
+			&.display-title {
+				display: none;
+			}
+			float: left;position: relative;
+			a {
+				display: block; width: 40px; height: 40px; padding: 0 0; text-align: center; line-height: 40px; margin-right: 10px;
+				border: 1px solid $base-border-color; @include border-radius(5px); background-color: transparent;
+				&:before{
+					display: inline-block; font-size: 20px; text-align: center; color: $color; @include transition(all 0.25s ease-out);
+				}
+				&.active, &:hover{
+					background-color: $color1; border-color: $color1;
+					&:before{
+						color: #fff;
+					}	
+				}
+				&.grid{
+					&:before{
+						@include font-awesome('f00a', 38px);
+					}
+				}
+				&.list{
+					&:before{
+						@include font-awesome('f00b', 38px);
+					}
+				}
+				span{ display: none; }	
+			}
+		}
+	}
+	
+	// .nbrItemPage,
+	.woocommerce-ordering {
+		display: block; float: right; padding: 0 0; margin: 0 0;
+		select.orderby{ height: 40px; line-height: 40px; width: 180px; 
+			@media (max-width: $screen-phone) {
+				width: 140px;
+			}
+		}
+		@media (max-width: $screen-xs-max) {
+			body.use-sticky-filter & {
+				display: none;
+			}
+		}
+		label{margin: 0 5px 0 0;}
+		.orderby-wrap{
+			position: relative;margin:0; padding: 0px;@include transition(all 0.2 ease-in);display: inline-block; line-height: 28px;
+			select.orderby{
+				border: none; padding: 0px 10px; background:#FFF; min-width: 170px;border: 1px solid $base-border-color; height:44px; line-height: 44px;
+			}
+			&:hover,
+			&:focus{
+				border-color: #CCC;
+			}
+			&:before{
+				position: absolute; content: ''; height: 5px; width: 9px; right: 10px; top: 12px; background: url(../img/ico-drop.png) no-repeat left top;
+			}
+		}
+	}
+	.nbrItemPage {
+		.select, .selector1 {
+			select {
+				width: 65px;
+			}
+		}
+	}
+	.woocommerce-result-count{
+		display: inline-block; margin:0 30px 0 0; float: left; padding: 0 0; line-height: 40px;
+		@media(max-width: $screen-xs-max){
+			display: none;
+		}
+	}
+	.woocommerce-pagination {
+		margin: 0;
+	}
+	.product-count {
+		display: none !important;
+	}
+	.showall {
+		display: none;
+	}
+
+}
